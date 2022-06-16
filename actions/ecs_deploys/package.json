@@ -1,0 +1,36 @@
+{
+  "name": "aws-actions-amazon-ecs-deploy-task-definition",
+  "version": "1.4.9",
+  "description": "Registers an Amazon ECS task definition and deploys it to an ECS service.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **.js",
+    "package": "export NODE_OPTIONS=--openssl-legacy-provider && ncc build index.js -o dist",
+    "test": "eslint **.js && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aws-actions/amazon-ecs-deploy-task-definition.git"
+  },
+  "keywords": [
+    "AWS",
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "AWS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aws-actions/amazon-ecs-deploy-task-definition/issues"
+  },
+  "homepage": "https://github.com/aws-actions/amazon-ecs-deploy-task-definition#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "aws-sdk": "^2.1112.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^8.13.0",
+    "jest": "^27.5.1"
+  }
+}

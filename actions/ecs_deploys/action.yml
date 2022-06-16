@@ -1,0 +1,33 @@
+name: "Deploy ECS Task"
+description: "Automatically Deploy ECS Task"
+
+inputs:
+  AWS_ACCOUNT_ID:
+    description: "AWS_ACCOUNT_ID"
+    required: true
+  AWS_REGION:
+    description: "AWS_REGION"
+    required: true
+  CLUSTER_NAME:
+    description: "CLUSTER_NAME"
+    required: true
+  SERVICE_NAME:
+    description: "SERVICE_NAME"
+    required: true
+  AWS_IMAGE_REPOSITORY:
+    description: "AWS_IMAGE_REPOSITORY"
+    required: true
+  DESIRED_COUNT:
+    description: "DESIRED_COUNT"
+    required: false
+    default: "1"
+  ENV_FILE:
+    description: "ENV_FILE"
+    required: false
+  FORCE_NEW_DEPLOYMENT:
+    description: "FORCE_NEW_DEPLOYMENT"
+    required: false
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
