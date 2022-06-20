@@ -62,3 +62,4 @@ jobs:
 #          AWS_REGION: ${{secrets.AWS_DEFAULT_REGION}}
 #          CLUSTER_NAME: tracking-development
 #          SERVICE_NAME: interface
+#          ENV_FILE: ./.env
