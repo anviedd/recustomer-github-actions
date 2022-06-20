@@ -1,0 +1,20 @@
+name: "Update Schedule ECS Task"
+description: "Automatically Update Schedule ECS Task"
+
+inputs:
+  AWS_ACCOUNT_ID:
+    description: "AWS_ACCOUNT_ID"
+    required: true
+  AWS_REGION:
+    description: "AWS_REGION"
+    required: true
+  CLUSTER_NAME:
+    description: "CLUSTER_NAME"
+    required: true
+  SERVICE_NAME:
+    description: "SERVICE_NAME"
+    required: true
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
