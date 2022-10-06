@@ -214,12 +214,14 @@ async function run() {
             }
 
             const serviceResponse = describeResponse.services[0];
-            if (serviceResponse.status != 'ACTIVE') {
+            if (serviceResponse.status !== 'ACTIVE') {
                 core.setFailed(`Service is ${serviceResponse.status}`);
                 throw new Error(`Service is ${serviceResponse.status}`);
             }
 
-            if (!serviceResponse.deploymentController) {
+            if (!serviceResponse.deploymentController ||
+                !serviceResponse.deploymentController.type ||
+                serviceResponse.deploymentController.type === 'ECS') {
                 await updateEcsService(ecs, clusterName, serviceName, taskDefArn, forceNewDeployment, desiredCount);
             } else {
                 core.setFailed(`Unsupported deployment controller: ${serviceResponse.deploymentController.type}`);
